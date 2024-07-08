@@ -1,0 +1,63 @@
+# Flutter/Dart/Pub related
+**/doc/api/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+.flutter/
+
+# Project files
+.idea/
+.vscode/
+*.iml
+
+# Android specific
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+
+# iOS specific
+ios/Flutter/.last_build_id
+ios/.generated/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/Runner.xcarchive/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Packages
+packages
+.packed
+
+# MacOS specific
+.DS_Store
+
+# VS Code
+.vscode/
+
+# IntelliJ
+*.iml
+.idea/
+
+# Gradle
+.gradle/
+*.lock
+!gradle-wrapper.jar
+**/gradle-wrapper.jar
+**/gradle-wrapper.properties
+
+# Temp files
+*.swp
+*.tmp
+*.temp
+*.log
+
+# Logs
+logs/
+*.log

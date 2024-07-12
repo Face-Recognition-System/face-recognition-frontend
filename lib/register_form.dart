@@ -102,9 +102,13 @@ class _RegisterFormState extends State<RegisterForm> {
               return null;
             },
           ),
+          SizedBox(height: 16.0),
           ElevatedButton(
             onPressed: _registerStudent,
             child: Text('Register Student'),
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
+            ),
           ),
         ],
       ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:provider/provider.dart';
 import 'capture_provider.dart';
-import 'capture_screen.dart';
+import 'capture_screen.dart'; // Ensure this import is correct
 import 'register_form.dart';
 
 void main() async {
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CaptureScreen(cameras: widget.cameras),
+            CaptureScreen(cameras: widget.cameras), // Ensure CaptureScreen is correctly imported and used
             Consumer<CaptureProvider>(
               builder: (context, captureProvider, child) {
                 if (captureProvider.capturedImage != null) {
@@ -67,24 +67,34 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 200.0,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey, width: 1.0),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        child: Image.memory(
-                          captureProvider.capturedImage!,
-                          fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(12.0),
+                          child: Image.memory(
+                            captureProvider.capturedImage!,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       SizedBox(height: 16.0),
-                      Text(captureProvider.result ?? ''),
+                      Text(
+                        captureProvider.result ?? '',
+                        style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       SizedBox(height: 16.0),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          OutlinedButton(
+                          ElevatedButton(
                             onPressed: () => captureProvider.clear(),
                             child: Text('Take New Picture'),
                           ),
                           SizedBox(width: 20),
-                          OutlinedButton(
+                          ElevatedButton(
                             onPressed: () => captureProvider.showRegisterForm(),
                             child: Text('Register New Student'),
                           ),

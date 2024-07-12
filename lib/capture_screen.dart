@@ -118,10 +118,14 @@ class _CaptureScreenState extends State<CaptureScreen> {
               height: 200.0,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey, width: 1.0),
+                borderRadius: BorderRadius.circular(12.0),
               ),
-              child: Image.memory(
-                capturedImage!,
-                fit: BoxFit.cover,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
+                child: Image.memory(
+                  capturedImage!,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(height: 16.0),
